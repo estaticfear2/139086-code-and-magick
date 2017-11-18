@@ -27,6 +27,7 @@ window.renderStatistics = function (ctx, names, times) {
   var initialX = 150;
   var initialY = 90;
   var playerBarColor = 'rgba(255, 0, 0, 1)';
+  var bestPlayersColor = 'rgba(0, 0, 255, ';
 
   for (var i = 0; i < names.length; i++) {
     ctx.fillStyle = '000';
@@ -35,7 +36,7 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i] === 'Вы') {
       ctx.fillStyle = playerBarColor;
     } else {
-      ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random().toFixed(1) + ')';
+      ctx.fillStyle = bestPlayersColor + getRandom(0.3, 1).toFixed(1) + ')';
     }
 
     ctx.fillRect(initialX + barWidth * i + indent * i, initialY + histogramHeight - times[i] * step, barWidth, times[i] * step);
@@ -66,4 +67,8 @@ var sortRelatedArrays = function (arr1, arr2) {
     }
   }
 
+};
+
+var getRandom = function (min, max) {
+  return min + Math.random() * (max - min);
 };
