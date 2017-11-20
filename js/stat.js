@@ -30,7 +30,6 @@ window.renderStatistics = function (ctx, names, times) {
   var bestPlayersColor = 'rgba(0, 0, 255, ';
 
   for (var i = 0; i < names.length; i++) {
-    ctx.fillStyle = '000';
     ctx.fillText(Math.floor(times[i]), initialX + barWidth * i + indent * i, initialY + histogramHeight - times[i] * step - 5);
 
     if (names[i] === 'Вы') {
@@ -39,9 +38,11 @@ window.renderStatistics = function (ctx, names, times) {
       ctx.fillStyle = bestPlayersColor + getRandom(0.3, 1).toFixed(1) + ')';
     }
 
+    var nameCenterX = barWidth / 2 - ctx.measureText(names[i]).width / 2;
+
     ctx.fillRect(initialX + barWidth * i + indent * i, initialY + histogramHeight - times[i] * step, barWidth, times[i] * step);
     ctx.fillStyle = '#000';
-    ctx.fillText(names[i], initialX + barWidth * i + indent * i, initialY + histogramHeight + lineHeight);
+    ctx.fillText(names[i], initialX + barWidth * i + indent * i + nameCenterX, initialY + histogramHeight + lineHeight);
   }
 
 };
