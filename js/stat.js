@@ -35,7 +35,7 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i] === 'Вы') {
       ctx.fillStyle = playerBarColor;
     } else {
-      ctx.fillStyle = bestPlayersColor + getRandom(0.3, 1).toFixed(1) + ')';
+      ctx.fillStyle = bestPlayersColor + getRandom(0.3, 1).toFixed(2) + ')';
     }
 
     var nameCenterX = barWidth / 2 - ctx.measureText(names[i]).width / 2;
