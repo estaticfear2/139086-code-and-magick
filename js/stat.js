@@ -50,6 +50,7 @@ window.renderStatistics = function (ctx, names, times) {
 var sortRelatedArrays = function (arr1, arr2) {
 
   var min;
+  var swap;
 
   for (var i = 0; i < arr1.length - 1; i++) {
     for (var j = i + 1; j < arr1.length; j++) {
@@ -57,7 +58,7 @@ var sortRelatedArrays = function (arr1, arr2) {
 
       if (arr1[j] < min) {
         min = arr1[j];
-        var swap = arr1[i];
+        swap = arr1[i];
         arr1[i] = arr1[j];
         arr1[j] = swap;
 
