@@ -1,3 +1,5 @@
+'use strict';
+
 var setup = document.querySelector('.setup');
 var setupSimilar = document.querySelector('.setup-similar');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
