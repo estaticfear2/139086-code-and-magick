@@ -75,7 +75,7 @@ var collectWizards = function (arr, wizard) {
   var fragment = document.createDocumentFragment();
 
   for (var i = 0; i < arr.length; i++) {
-    fragment.appendChild(renderWizard(arr[i]));
+    fragment.appendChild(wizard(arr[i]));
   }
 
   return fragment;
