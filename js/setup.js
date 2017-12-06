@@ -104,6 +104,13 @@ var setSetupSimilarList = function () {
   setupSimilar.classList.remove('hidden');
 };
 
+var clearSetupSimilarList = function () {
+  var children = setupSimilarList.children;
+  for (var i = children.length - 1; i >= 0; i--) {
+    setupSimilarList.removeChild(children[i]);
+  }
+};
+
 var showSetup = function () {
   setSetupSimilarList();
   setup.classList.remove('hidden');
@@ -113,10 +120,7 @@ var showSetup = function () {
 };
 
 var hideSetup = function () {
-  var children = setupSimilarList.children;
-  for (var i = children.length - 1; i >= 0; i--) {
-    setupSimilarList.removeChild(children[i]);
-  }
+  clearSetupSimilarList();
   setup.classList.add('hidden');
   document.removeEventListener('keydown', onSetupEscPress);
   setupWizard.removeEventListener('click', onSetupWizardClick);
